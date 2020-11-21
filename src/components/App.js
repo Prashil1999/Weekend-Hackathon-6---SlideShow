@@ -5,8 +5,8 @@ const App = (props) => {
   let [current, SetCurrent] = React.useState(0);
   return (
     <>
-      <h1 data-testid="title">{this.props.slides[current].title}</h1>
-      <p data-testid="text">{this.props.slides[current].text}</p>
+      <h1 data-testid="title">{props.slides[current].title}</h1>
+      <p data-testid="text">{props.slides[current].text}</p>
       <button
         data-testid="button-restart"
         onClick={() => SetCurrent(0)}
@@ -17,7 +17,7 @@ const App = (props) => {
       <button
         data-testid="button-next"
         onClick={() => SetCurrent(current + 1)}
-        disabled={current === this.props.slides.length - 1 ? true : false}
+        disabled={current === props.slides.length - 1 ? true : false}
       >
         Next
       </button>
