@@ -8,20 +8,26 @@ const App = () => {
     <>
       <h1 data-testid="title">{slides[current].title}</h1>
       <p data-testid="text">{slides[current].text}</p>
-      <button data-testid="button-restart">restart</button>
+      <button
+        data-testid="button-restart"
+        onClick={() => SetCurrent(0)}
+        disabled={current === 0 ? true : false}
+      >
+        Restart
+      </button>
       <button
         data-testid="button-next"
         onClick={() => SetCurrent(current + 1)}
         disabled={current === slides.length - 1 ? true : false}
       >
-        next
+        Next
       </button>
       <button
         data-testid="button-prev"
         onClick={() => SetCurrent(current - 1)}
         disabled={current === 0 ? true : false}
       >
-        prev
+        Prev
       </button>
     </>
   );
